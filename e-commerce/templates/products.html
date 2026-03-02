@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Products</h3>
+{% for p in products %}
+  <img src="/{{p.image}}" width="100">
+  {{p.name}} ₹{{p.price}}
+  <a href="/add/{{p.id}}">Add</a><br>
+{% endfor %}
+<a href="/cart">Cart</a> | <a href="/logout">Logout</a>
+</body>
+</html>

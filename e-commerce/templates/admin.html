@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+  <input name="name" placeholder="Name" required>
+  <input name="price" placeholder="Price" required>
+  <input type="file" name="image" required>
+  <button>Add Product</button>
+</form>
+
+{% for p in products %}
+  {{p.name}} ₹{{p.price}}<br>
+{% endfor %}
+</body>
+</html>
