@@ -6,7 +6,7 @@ from getpass import getpass
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="",
+    password="root",
     database="testdb"
 )
 cursor = db.cursor(dictionary=True)
@@ -38,4 +38,5 @@ user = cursor.fetchone()
 if user:
     print("Login successful")
 else:
+
     print("Invalid username or password")
