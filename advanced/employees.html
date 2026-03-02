@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form class="row g-2 mb-3">
+  <input name="dept" class="form-control col" placeholder="Department">
+  <input name="min" class="form-control col" placeholder="Min Salary">
+  <input name="max" class="form-control col" placeholder="Max Salary">
+  <button class="btn btn-primary col">Filter</button>
+  <a href="/export" class="btn btn-success col">Export CSV</a>
+</form>
+
+<table class="table table-bordered">
+{% for e in employees %}
+<tr>
+  <td>{{ e.name }}</td>
+  <td>{{ e.department }}</td>
+  <td>{{ e.salary }}</td>
+</tr>
+{% endfor %}
+</table> 
+</body>
+</html>

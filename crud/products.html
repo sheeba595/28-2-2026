@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-4">
+
+<h3>Products</h3>
+
+<form method="post" class="row g-2 mb-3">
+  <input name="name" class="form-control col" placeholder="Name" required>
+  <input name="price" class="form-control col" placeholder="Price" required>
+  <input name="category" class="form-control col" placeholder="Category" required>
+  <button class="btn btn-primary col">Add</button>
+</form>
+
+<form method="post" action="/delete-products">
+<table class="table table-bordered">
+<tr><th></th><th>Name</th><th>Price</th><th>Category</th></tr>
+{% for p in products %}
+<tr>
+<td><input type="checkbox" name="ids" value="{{p.id}}"></td>
+<td>{{p.name}}</td>
+<td>{{p.price}}</td>
+<td>{{p.category}}</td>
+</tr>
+{% endfor %}
+</table>
+<button class="btn btn-danger">Bulk Delete</button>
+</form>
+
+<h5 class="mt-4">Grouped by Category</h5>
+<ul>
+{% for g in grouped %}
+<li>{{g.category}} : {{g.total}}</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
