@@ -7,7 +7,7 @@ app = Flask(__name__)
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="",
+    password="root",
     database="testdb"
 )
 cursor = db.cursor(dictionary=True)
@@ -152,5 +152,6 @@ def contact():
         db.commit()
         return redirect("/contact")
     return render_template("contact.html")
+
 
 app.run(debug=True)
