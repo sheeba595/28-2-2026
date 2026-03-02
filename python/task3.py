@@ -6,7 +6,7 @@ import mysql.connector
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="",
+    password="root",
     database="testdb"
 )
 cursor = db.cursor()
@@ -31,5 +31,6 @@ cursor.execute(
     (name, email, course)
 )
 db.commit()
+
 
 print("Student registered successfully")
